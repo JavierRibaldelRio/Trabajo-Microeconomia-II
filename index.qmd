@@ -6,7 +6,9 @@ authors:
 bibliography: references.bib
 ---
 
-## Introducción 
+\newpage
+
+## Introducción
 ### Antecedentes
 
 En 1941 se crea *Red Nacional de los Ferrocarriles Españoles (RENFE)* una compañía estatal fundada con el objetivo de estandarizar la red ferroviaria española actuando como operadora de transporte ferroviario y como gestora de la infraestructura (vías, estaciones, red). Esta configuración se corresponde con un monopolio natural, caracterizado por la existencia de *RENFE* como compañía monopolística que concentra toda la oferta ferroviaria. Este monopolio terminaría con el proceso de liberalización del sistema ferroviario iniciado en la directiva 91/440/CEE, en primer lugar provocó la escisión en 2005 de *RENFE* en *Administrador de Infraestructuras Ferroviarias (Adif)* (gestión de infraestructuras) y *RENFE-Operadora*  (operadora de la red), y finalmente, en 2020 la apertura de la red a compañías privadas. La entrada de la operadoras *OUIGO* en 2021 e *iryo* en 2022, supuso el paso de un monopolio a un oligopolio.

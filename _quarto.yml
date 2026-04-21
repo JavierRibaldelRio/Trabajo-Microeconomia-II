@@ -5,14 +5,12 @@ manuscript:
   article: index.qmd
 
 format:
-  html:
-    comments:
-      hypothesis: true
-  docx: default
-  jats: default
 
-  # (other formats)
-  # pdf: default
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: false
+    include-in-header: src/header.tex
 
 execute:
   freeze: true

@@ -1,0 +1,80 @@
+% ============================================================
+%  HEADER & FOOTER CONFIGURATION FOR QUARTO PDF BOOK
+% ============================================================
+
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\definecolor{euBlue}{HTML}{003399}
+
+
+
+% =============================
+% ESPACIADOS (AJUSTADOS)
+% =============================
+\setlength{\headheight}{30pt}     % altura del header
+\setlength{\headsep}{32pt}        % separación entre cabecera y contenido
+\setlength{\footskip}{50pt}       % distancia texto → pie
+
+% =============================
+% CONFIGURACIÓN GENERAL
+% =============================
+\pagestyle{fancy}
+\fancyhf{}
+
+% ============================================================
+%                      HEADER (normal)
+% ============================================================
+\fancyhead[L]{%
+  \includegraphics[height=1.2cm]{src/img/UPV.png}
+}
+
+\fancyhead[C]{%
+  {\footnotesize \textbf{Microeconomía II \\
+  Doble Grado ADE + INF}}                                  % <-- Cambia el grado
+}
+
+\fancyhead[R]{%
+  \includegraphics[height=1.2cm]{src/img/fade.jpg}
+}
+
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ============================================================
+%                      FOOTER (normal)
+% ============================================================
+\fancyfoot[L]{Javier Ribal del Río}             % <-- Cambia los autores
+\fancyfoot[C]{}
+\fancyfoot[R]{\thepage}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% ============================================================
+%              PÁGINAS TIPO "PLAIN" (capítulos, portada)
+% ============================================================
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+
+  % HEADER plain
+  \fancyhead[L]{%
+    \includegraphics[height=1.2cm]{src/img/UPV.png}
+  }
+
+  \fancyhead[C]{%
+    {\footnotesize \textbf{Microeconomía II \\
+    Doble Grado ADE + INF}}                                  % <-- Cambia el grado
+  }
+
+  \fancyhead[R]{%
+    \includegraphics[height=1.2cm]{src/img/fade.jpg}
+  }
+
+  \renewcommand{\headrulewidth}{0.4pt}
+
+  % FOOTER plain
+  \fancyfoot[L]{Javier Ribal del Río}             % <-- Cambia los autores
+  \fancyfoot[C]{}
+  \fancyfoot[R]{\thepage}
+  \renewcommand{\footrulewidth}{0.4pt}
+}
+
+\AtBeginDocument{\pagestyle{fancy}}
