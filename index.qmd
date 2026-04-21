@@ -1,0 +1,52 @@
+---
+title: "Del monopolio al oligopolio: la liberalización del sistema ferroviario español"
+date: today
+authors:
+  - name: Javier Ribal del Río
+bibliography: references.bib
+---
+
+## Introducción 
+### Antecedentes
+
+En 1941 se crea *Red Nacional de los Ferrocarriles Españoles (RENFE)* una compañía estatal fundada con el objetivo de estandarizar la red ferroviaria española actuando como operadora de transporte ferroviario y como gestora de la infraestructura (vías, estaciones, red). Esta configuración se corresponde con un monopolio natural, caracterizado por la existencia de *RENFE* como compañía monopolística que concentra toda la oferta ferroviaria. Este monopolio terminaría con el proceso de liberalización del sistema ferroviario iniciado en la directiva 91/440/CEE, en primer lugar provocó la escisión en 2005 de *RENFE* en *Administrador de Infraestructuras Ferroviarias (Adif)* (gestión de infraestructuras) y *RENFE-Operadora*  (operadora de la red), y finalmente, en 2020 la apertura de la red a compañías privadas. La entrada de la operadoras *OUIGO* en 2021 e *iryo* en 2022, supuso el paso de un monopolio a un oligopolio.
+
+### Objetivos
+
+El objetivo del presente trabajo académico es analizar la estructura de mercado del transporte ferroviario español tras su liberalización, particularmente en el sector de la alta velocidad, evaluando si se corresponde con un oligopolio. Interpretandolo con modelos del oligopolio, analizando el grado de concentración de mercado y el comportamiento microeconómico de las empresas.
+
+
+### Justificación 
+
+En la actualidad España mantiene la 2ª red de alta velocidad más extensa del mundo, por lo que resulta interesante en un contexto con un alto nivel de utilización de la red, analizar la transición de un monopolio a un oligopolio y su impacto en la competencia. 
+
+---
+
+
+## Trabajo restante
+
+- 2. DESARROLLO
+  - 2.1 Estructura del mercado y barreras de entrada:(operadores principales, oligopolio, Adif, barreras: infraestructura, inversión, regulación)
+  - 2.2 Evolución de la demanda:(pasajeros, crecimiento tras liberalización, datos INE, gráfico en R)
+  - 2.3 Grado de concentración del mercado  (cuotas de mercado, índice HHI, cálculo en R, interpretación)
+  - 2.4 Comportamiento estratégico de las empresas (competencia en precios - Bertrand)
+  - 2.5 Poder de mercado - (precios - ¿Renfe como empresa privilegiada dentro del oligopolio?)
+
+- 3. DISCUSIÓN Y CONCLUSIONES
+
+
+- 4. REFERENCIAS BIBLIOGRÁFICAS  
+  (INE, CNMC, informes sectoriales, manual de microeconomía)
+
+## Otras cuestiones
+
+¿Cómo cito en el texto y cuando? Preguntar por: Leyes, história...
+
+## Fuentes
+
+*falta citar e incluir las referencias en el texto*
+
+- https://www.transportes.gob.es/el-ministerio/campanas-de-publicidad/2021-anio-europeo-del-ferrocarril/conociendo-el-ferrocarril/12-hitos
+- https://www.boe.es/diario_boe/txt.php?id=BOE-A-2006-16636
+- https://www.boe.es/buscar/doc.php?id=DOUE-L-1991-81196
+- https://www.canalsur.es/noticias/andalucia/la-red-de-alta-velocidad-espanola-la-mas-extensa-de-europa-con-4000-kilometros/2236223.html?utm_source=chatgpt.com
