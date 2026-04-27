@@ -4,14 +4,22 @@ date: today
 authors:
   - name: Javier Ribal del Río
 bibliography: references.bib
+lang: es
 ---
 
 \newpage
 
+```{r}
+library(tidyverse)
+
+filtered_data_train <- readRDS("data/filtered_data_train.rds") |> filter(fecha > as.Date("2017-12-31")) 
+total_data_train <- readRDS("data/total_data_train.rds")
+```
+
 ## Introducción
 ### Antecedentes
 
-En 1941 se crea *Red Nacional de los Ferrocarriles Españoles (RENFE)* una compañía estatal fundada con el objetivo de estandarizar la red ferroviaria española actuando como operadora de transporte ferroviario y como gestora de la infraestructura (vías, estaciones, red). Esta configuración se corresponde con un monopolio natural, caracterizado por la existencia de *RENFE* como compañía monopolística que concentra toda la oferta ferroviaria. Este monopolio terminaría con el proceso de liberalización del sistema ferroviario iniciado en la directiva 91/440/CEE, en primer lugar provocó la escisión en 2005 de *RENFE* en *Administrador de Infraestructuras Ferroviarias (Adif)* (gestión de infraestructuras) y *RENFE-Operadora*  (operadora de la red), y finalmente, en 2020 la apertura de la red a compañías privadas. La entrada de la operadoras *OUIGO* en 2021 e *iryo* en 2022, supuso el paso de un monopolio a un oligopolio.
+En 1941 se crea *Red Nacional de los Ferrocarriles Españoles (RENFE)* una compañía estatal fundada con el objetivo de estandarizar la red ferroviaria española actuando como operadora de transporte ferroviario y como gestora de la infraestructura (vías, estaciones, red) [@hitosferrocarril]. Esta configuración se corresponde con un monopolio natural, caracterizado por la existencia de *RENFE* como compañía monopolística que concentra toda la oferta ferroviaria. Este monopolio terminaría con el proceso de liberalización del sistema ferroviario iniciado en la directiva 91/440/CEE [@directiva91440], en primer lugar provocó la escisión en 2005 de *RENFE* en *Administrador de Infraestructuras Ferroviarias (Adif)* (gestión de infraestructuras) y *RENFE-Operadora*  (operadora de la red) [@reglamentosectorferroviario], y finalmente, en 2020 la apertura de la red a compañías privadas. La entrada de la operadoras *OUIGO* en 2021 e *iryo* en 2022, supuso el paso de un monopolio a un oligopolio.
 
 ### Objetivos
 
@@ -20,9 +28,166 @@ El objetivo del presente trabajo académico es analizar la estructura de mercado
 
 ### Justificación 
 
-En la actualidad España mantiene la 2ª red de alta velocidad más extensa del mundo, por lo que resulta interesante en un contexto con un alto nivel de utilización de la red, analizar la transición de un monopolio a un oligopolio y su impacto en la competencia. 
+En la actualidad España mantiene la 2ª red de alta velocidad más extensa del mundo [@canalsurave], por lo que resulta interesante en un contexto con un alto nivel de utilización de la red, analizar la transición de un monopolio a un oligopolio y su impacto en la competencia. 
+
+## Desarrollo
+
+### Estructura del mercado 
+
+Dentro del mercado de la alta velocidad encontramos las tres operadoras previamente mencionadas, *RENFE-Operadora* (de ahora en adelante *Renfe*), *OUIGO* e *iryo*. Estas compañías únicamente prestan servicios de transporte de viajeros y no disponen de infraestructura propia. Por ello, acceden a la red gestionada por *Adif* mediante la adjudicación de capacidad (surcos), abonando los correspondientes cánones por su utilización. [@adif2027]
+
+En el momento de la redacción únicamente solo hay 5 corredores de alta velocidad (AV) donde ha entrado la competencia externa estos son: Madrid-Alicante, Madrid-Barcelona, Madrid-Málaga/Granada, Madrid-Sevilla y Madrid-Valencia
+
+#### Barreras de entrada
+
+Para poder acceder a la red es necesario cumplir con las condiciones especificadas en la [Ley 38/2015 del Sector Ferroviario](@lsf) siendo los más destacables la obtención de Licencia de Empresa ferroviaria
+y el Certificado de Seguridad ambos documentos expedidos por la *Agencia Estatal de Seguridad Ferroviaria*, así como la contratación de la cobertura de responsabilidad civil y pasar una homologación del material. Únicamente al cumplir todos los requisitos se puede solicitar el surco ferroviario, las condiciones y el largo proceso burocrático supone una barrera de entrada para el mercado. [@adif2027]
+
+
+Un surco ferroviario es el permiso necesario para que un tren de determinada compañía pueda circular por un trayecto en un momento determinado. La oferta de surcos limita la capacidad máxima de la red, por lo que las operadoras compiten por los surcos; es decir, el mercado está limitado por la capacidad de la red, que no puede aumentarse en el corto plazo, ya que requeriría inversiones a largo plazo para la construcción de nuevas vías. La rigidez en la oferta en el corto plazo supone otra barrera de entrada para el mercado. Una menor capacidad de la red limita el número de operadores y la competencia, lo que refuerza la idea de la estructura del oligopolio.
+
+*Adif* asigna los surcos, tratando de optimizar la capacidad de la red y gestionando el tráfico, sin favorecer a ninguna operadora. El proceso de asignación es supervisado por la *Comisión Nacional de los Mercados y la Competencia (CNMC)*. [@adif2027]
+
+
+Además de las barreras de entradas asociadas al acceso a la infraestructura , las operadoras ferroviarias se caracterizan por requerir de una elevada inversión inicial para la adquisición del material rodante esto conlleva unos elevados costes fijos hundidos puesto que las locomotoras y vagones muchas veces son específicos para cada sistema ferroviario. 
+
+Destaca el caso de *iryo*, la única operadora completamente privada (*OUIGO* pertenece al gobierno francés) ha requerido una inversión inicial de 1.000 millones de euros en 2020 y su primer trayecto fue en 2022, lo que muestra claramente las dificultades de entrada en este mercado.[@naceiryo]
+
+#### Estructura y modelo de mercado 
+
+Podemos descomponer el mercado en dos niveles: el mercado de capacidad ferroviaria o mercado de surcos (*upstream*) y el mercado de transporte de pasajeros  o mercado de asintos (*downstream*).
+
+Por una parte, el mercado de surcos, donde *Adif* actua como los oferentes de los surcos y las operadoras como demanandantes. El mercado presenta una estructura de monopolio natural. En el corto plazo, la oferta es oferta perfectamente inelástica, puesto que se encuentra limitada por la capacidad máxima de la red. ($O \equiv Q = Q_{max}$, no responde al precio), además la CNMC aplica una política económica que fija el precio. En términos de demanda distinguimos dos situaciones: la previa a la liberalización, en la que la demanda viene dada únicamente por Renfe (monopolio bilateral) ($D_1$), y la posterior con la entrada de nuevas operadoras que provoca un desplazamiento hacia la derecha de la demanda ($D_2$) (ver @fig-mercado-surcos).
+
+```{r}
+#| label: fig-mercado-surcos
+#| fig-cap: "Mercado de surcos."
+#| fig-width: 7
+#| fig-height: 4
+#| out-width: "70%"
+#| fig-align: center
+
+ggplot() +
+  geom_hline(yintercept = 7, colour = "grey50", linewidth = 1) +
+  annotate("text", x = 0, y = 7, label = "paste(P[fijo], ' = ', P[E], ' = ', P[E[0]])", parse = TRUE, hjust = 1.05, size = 5) +
+  annotate("text", x = 10, y = 7, label = "P[fijo]", parse = TRUE, hjust = -0.2, size = 5) +
+annotate("text", x = 7, y = 7, label = "E", hjust = -0.5, vjust = -0.5, size = 5) +
+  geom_segment(aes(x = 2.1, y = 10, xend = 4.1, yend = 0),
+               colour = "#6A0DAD", linewidth = 1) +
+  annotate("text", x = 2.1, y = 10, label = "D[1]", parse = TRUE,
+           colour = "#6A0DAD", hjust = -0.8, vjust = 1.5, size = 5) +
+  geom_segment(aes(x = 6.4, y = 10, xend = 8.4, yend = 0),
+               colour = "#E60028", linewidth = 1) +
+  annotate("text", x = 6.4, y = 10, label = "D[2]", parse = TRUE,
+           colour = "#E60028", hjust = -0.8, vjust = 1.5, size = 5) +
+  annotate("point", x = 7, y = 7, size = 3) +
+  geom_segment(aes(x = 2.7, y = 7, xend = 2.7, yend = 0),
+               colour = "grey50", linetype = "dashed", linewidth = 0.4) +
+  annotate("text", x = 2.7, y = 0, label = "Q[E[0]]", parse = TRUE, vjust = 1.5, size = 5) +
+  annotate("point", x = 2.7, y = 7, size = 3) +
+  annotate("text", x = 2.7, y = 7, label = "E[0]", parse = TRUE, hjust = -0.3, vjust = -0.5, size = 5) +
+  geom_segment(aes(x = 2.2, y = 8.5, xend = 6, yend = 8.5),
+               arrow = arrow(length = unit(0.3, "cm")),
+               colour = "grey30", linewidth = 0.6) +
+  annotate("text", x = 4, y = 8.9, label = "Liberalización", size = 4.5, colour = "grey20") +
+  geom_segment(aes(x = 2.7, y = 6.3, xend = 7, yend = 6.3),
+               colour = "grey30", linewidth = 0.5) +
+  geom_segment(aes(x = 2.7, y = 6.3, xend = 2.7, yend = 6.5),
+               colour = "grey30", linewidth = 0.5) +
+  geom_segment(aes(x = 7, y = 6.3, xend = 7, yend = 6.5),
+               colour = "grey30", linewidth = 0.5) +
+  geom_segment(aes(x = 4.85, y = 6.3, xend = 4.85, yend = 6.1),
+               colour = "grey30", linewidth = 0.5) +
+  annotate("text", x = 4.85, y = 5.7, label = "Exceso oferta",
+           size = 4, colour = "grey20") +
+  geom_vline(xintercept = 7, colour = "blue", linewidth = 1) +
+  annotate("text", x = 7, y = 9.5, label = "O", colour = "blue", hjust = -0.5, size = 5) +
+  annotate("text", x = 7, y = 0, label = "paste(Q[max], ' = ', Q[E])", parse = TRUE, vjust = 1.5, size = 5) +
+  scale_x_continuous(limits = c(0, 10), expand = c(0, 0), name = "Q") +
+  scale_y_continuous(limits = c(0, 10), expand = c(0, 0), name = "P") +
+  coord_cartesian(clip = "off") +
+  theme_classic() +
+  theme(
+    plot.margin = margin(10, 20, 20, 10),
+    axis.line = element_line(arrow = arrow(length = unit(0.3, "cm")), linewidth = 1.5),
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title.x = element_text(hjust = 1, size = 14),
+    axis.title.y = element_text(hjust = 1, angle = 0, vjust = 1, size = 14)
+  )
+```
+
+### Evolución de la demanda
+
+
+```{r}
+filtered_data_train |>
+  group_by(empresa, fecha) |>
+  summarise(
+    plazas_ofertadas = sum(plazas_ofertadas)
+  ) |>
+  ggplot(
+    aes(x = fecha, y = plazas_ofertadas, colour = empresa)
+  ) +
+  geom_line(linewidth = 1) +
+  geom_line(
+    data = filtered_data_train |>
+      group_by(fecha) |>
+      summarise(plazas_ofertadas = sum(plazas_ofertadas)),
+    aes(x = fecha, y = plazas_ofertadas, linetype = "Total"),
+    inherit.aes = FALSE,
+    linewidth = 1,
+    colour = "black"
+  ) +
+  scale_linetype_manual(name = NULL, values = c(Total = "dashed")) +
+  scale_y_continuous(labels = scales::label_number(big.mark = ".", decimal.mark = ",")) +
+  scale_colour_manual(values = c(Renfe = "#4B286D", iryo = "#E60028", OUIGO = "#009FE3")) +
+  labs(
+    title = "Evolución de las plazas ofertadas por corredor",
+    x = "Fecha",
+    y = "Plazas ofertadas",
+    colour = "Empresa"
+  ) +
+  theme_minimal()
+```
+
+```{r}
+filtered_data_train |>
+  group_by(empresa, corredor, fecha) |>
+  summarise(
+    plazas_ofertadas = sum(plazas_ofertadas)
+  ) |>
+  ggplot(
+    aes(x = fecha, y = plazas_ofertadas, colour = empresa)
+  ) +
+  geom_line(linewidth = 1) +
+  geom_line(
+    data = filtered_data_train |>
+      group_by(corredor, fecha) |>
+      summarise(plazas_ofertadas = sum(plazas_ofertadas), .groups = "drop"),
+    aes(x = fecha, y = plazas_ofertadas, linetype = "Total"),
+    inherit.aes = FALSE,
+    linewidth = 1,
+    colour = "black"
+  ) +
+  scale_linetype_manual(name = NULL, values = c(Total = "dashed")) +
+  facet_wrap(~ corredor) +
+  scale_y_continuous(labels = scales::label_number(big.mark = ".", decimal.mark = ",")) +
+  scale_colour_manual(values = c(Renfe = "#4B286D", iryo = "#E60028", OUIGO = "#009FE3")) +
+  labs(
+    title = "Evolución de las plazas ofertadas por corredor",
+    x = "Fecha",
+    y = "Plazas ofertadas",
+    colour = "Empresa"
+  ) +
+  theme_minimal()
+```
+
+
 
 ---
+
+https://www.cope.es/emisoras/comunidad-valenciana/valencia-provincia/valencia/noticias/iryo-primer-operador-privado-espanol-alta-velocidad-20211118_1627762
 
 
 ## Trabajo restante

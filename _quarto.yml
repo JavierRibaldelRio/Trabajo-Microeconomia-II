@@ -3,6 +3,8 @@ project:
 
 manuscript:
   article: index.qmd
+notebook-links: false
+csl: iso690.csl
 
 format:
 
@@ -13,7 +15,6 @@ format:
     include-in-header: src/header.tex
 
 execute:
-  freeze: true
-
+  cache: true
 
 
