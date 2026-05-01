@@ -1,3 +1,7 @@
 /.quarto/
 **/*.quarto_ipynb
 _manuscript/
+como_citar_upv.pdf
+
+index_cache/
+index_files/

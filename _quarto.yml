@@ -9,6 +9,7 @@ csl: iso690.csl
 format:
 
   pdf:
+    papersize: a4
     toc: true
     number-sections: true
     colorlinks: false
