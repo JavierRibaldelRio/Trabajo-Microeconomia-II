@@ -19,16 +19,16 @@ total_data_train <- readRDS("data/total_data_train.rds")
 ## Introducción
 ### Antecedentes
 
-En 1941 se crea *Red Nacional de los Ferrocarriles Españoles (RENFE)* una compañía estatal fundada con el objetivo de estandarizar la red ferroviaria española actuando como operadora de transporte ferroviario y como gestora de la infraestructura (vías, estaciones, red) [@hitosferrocarril]. Esta configuración se corresponde con un monopolio natural, caracterizado por la existencia de *RENFE* como compañía monopolística que concentra toda la oferta ferroviaria. Este monopolio terminaría con el proceso de liberalización del sistema ferroviario iniciado en la directiva 91/440/CEE [@directiva91440], en primer lugar provocó la escisión en 2005 de *RENFE* en *Administrador de Infraestructuras Ferroviarias (Adif)* (gestión de infraestructuras) y *RENFE-Operadora*  (operadora de la red) [@reglamentosectorferroviario], y finalmente, en 2020 la apertura de la red a compañías privadas. La entrada de la operadoras *OUIGO* en 2021 e *iryo* en 2022, supuso el paso de un monopolio a un oligopolio.
+En 1941 se crea *Red Nacional de los Ferrocarriles Españoles (RENFE)*, una compañía estatal fundada con el objetivo de estandarizar la red ferroviaria española, actuando como operadora de transporte ferroviario y como gestora de la infraestructura (vías, estaciones, red) [@hitosferrocarril]. Esta configuración se corresponde con un monopolio natural, caracterizado por la existencia de *RENFE* como compañía monopolística que concentra toda la oferta ferroviaria. Este monopolio terminaría con el proceso de liberalización del sistema ferroviario iniciado por la Directiva 91/440/CEE [@directiva91440], que en primer lugar provocó la escisión en 2005 de *RENFE* en *Administrador de Infraestructuras Ferroviarias (Adif)* (gestión de infraestructuras) y *RENFE-Operadora* (operadora de la red) [@reglamentosectorferroviario] y, finalmente, en 2020 la apertura de la red a compañías privadas. La entrada de las operadoras *OUIGO* en 2021 e *iryo* en 2022 supuso el paso de un monopolio a un oligopolio.
 
 ### Objetivos
 
-El objetivo del presente trabajo académico es analizar la estructura de mercado del transporte ferroviario español tras su liberalización, particularmente en el sector de la alta velocidad, evaluando si se corresponde con un oligopolio. Interpretandolo con modelos del oligopolio, analizando el grado de concentración de mercado y el comportamiento microeconómico de las empresas.
+El objetivo del presente trabajo académico es analizar en detalle la estructura de mercado del transporte ferroviario español tras su liberalización, particularmente en el sector de la alta velocidad, evaluando si se corresponde con un oligopolio, interpretándolo con modelos teóricos y analizando el grado de concentración del mercado y el comportamiento microeconómico de las empresas.
 
 
 ### Justificación 
 
-En la actualidad España mantiene la 2ª red de alta velocidad más extensa del mundo [@canalsurave], por lo que resulta interesante en un contexto con un alto nivel de utilización de la red, analizar la transición de un monopolio a un oligopolio y su impacto en la competencia. 
+En la actualidad España mantiene la 2ª red de alta velocidad más extensa del mundo [@canalsurave], por lo que, en un contexto con un alto nivel de utilización de la red, resulta interesante analizar la transición de un monopolio a un oligopolio y su impacto en la competencia.
 
 ## Desarrollo
 
@@ -36,38 +36,36 @@ En la actualidad España mantiene la 2ª red de alta velocidad más extensa del 
 
 Dentro del mercado de la alta velocidad encontramos las tres operadoras previamente mencionadas, *RENFE-Operadora* (de ahora en adelante *Renfe*), *OUIGO* e *iryo*. Estas compañías únicamente prestan servicios de transporte de viajeros y no disponen de infraestructura propia. Por ello, acceden a la red gestionada por *Adif* mediante la adjudicación de capacidad (surcos), abonando los correspondientes cánones por su utilización. [@adif2027]
 
-En el momento de la redacción sólo hay 5 corredores de alta velocidad (AV) donde ha entrado la competencia externa estos son: Madrid-Alicante, Madrid-Barcelona, Madrid-Málaga/Granada, Madrid-Sevilla y Madrid-Valencia
+En el momento de la redacción solo hay 5 corredores de alta velocidad (AV) donde ha entrado la competencia externa: Madrid-Alicante, Madrid-Barcelona, Madrid-Málaga/Granada, Madrid-Sevilla y Madrid-Valencia.
 
 #### Barreras de entrada
 
-El acceso a la red exige cumplir las condiciones recogidas en la [Ley 38/2015 del Sector Ferroviario](@lsf), entre las que destacan la Licencia de Empresa ferroviaria y el Certificado de Seguridad, ambos expedidos por la *Agencia Estatal de Seguridad Ferroviaria*, junto con la cobertura de responsabilidad civil y la homologación del material. Solo entonces puede solicitarse el surco ferroviario, lo que convierte el proceso burocrático en una primera barrera de entrada. [@adif2027]
+El acceso a la red exige cumplir las condiciones recogidas en la Ley 38/2015 del Sector Ferroviario [@lsf], entre las que destacan la Licencia de Empresa ferroviaria y el Certificado de Seguridad, ambos expedidos por la *Agencia Estatal de Seguridad Ferroviaria*, junto con la cobertura de responsabilidad civil y la homologación del material. Solo entonces puede solicitarse el surco ferroviario, lo que convierte el proceso burocrático en una primera barrera de entrada. [@adif2027]
 
-Un surco es el permiso necesario para que un tren circule por un trayecto en un momento determinado, y su oferta está limitada por la capacidad máxima de la red. Esta capacidad no puede ampliarse en el corto plazo —requeriría grandes inversiones en nuevas vías—, por lo que las operadoras compiten por un número fijo de surcos. Esta rigidez constituye una segunda barrera de entrada y refuerza la estructura oligopolística del mercado. La asignación corre a cargo de *Adif*, supervisada por la *Comisión Nacional de los Mercados y la Competencia (CNMC)*, sin favorecer a ninguna operadora. [@adif2027]
+Un surco es el permiso necesario para que un tren circule por un trayecto en un momento determinado, y su oferta está limitada por la capacidad máxima de la red. Esta capacidad no puede ampliarse en el corto plazo (requeriría grandes inversiones en nuevas vías), por lo que las operadoras compiten por un número fijo de surcos. Esta rigidez constituye una segunda barrera de entrada y refuerza la estructura oligopolística del mercado. La asignación corre a cargo de *Adif*, supervisada por la *Comisión Nacional de los Mercados y la Competencia (CNMC)*, sin favorecer a ninguna operadora. [@adif2027]
 
 A ello se suma la elevada inversión inicial en material rodante, que genera costes fijos hundidos al ser locomotoras y vagones específicos para cada sistema ferroviario. Destaca el caso de *iryo*, la única operadora completamente privada (*OUIGO* pertenece al gobierno francés), que requirió una inversión inicial de 1.000 millones de euros en 2020 y no efectuó su primer trayecto hasta 2022, lo que ilustra las dificultades de entrada en este mercado. [@naceiryo]
 
 #### Estructura y modelo de mercado 
 
-Podemos descomponer el mercado en dos niveles: el mercado de capacidad ferroviaria o mercado de surcos (*upstream*) y el mercado de transporte de pasajeros  o mercado de asintos (*downstream*).
+Podemos descomponer el mercado en dos niveles: el mercado de capacidad ferroviaria o mercado de surcos (*upstream*) y el mercado de transporte de pasajeros (*downstream*).
 
-Por una parte, el mercado de surcos, donde *Adif* actua como los oferentes de los surcos y las operadoras como demanandantes. El mercado presenta una estructura de monopolio natural.
+Por una parte, el mercado de surcos, donde *Adif* actúa como oferente y las operadoras como demandantes. El mercado presenta una estructura de monopolio natural. En términos de demanda distinguimos dos situaciones: la previa a la liberalización, en la que la demanda viene dada únicamente por Renfe (monopolio bilateral) ($D_1$), y la posterior con la entrada de nuevas operadoras que provoca un desplazamiento hacia la derecha de la demanda ($D_2$) (ver @fig-mercados-1).
 
-:::: {layout="[0.3, 0.65]"}
+Conviene señalar que las operadoras ferroviarias presentan una estructura de costes muy particular: los costes fijos (material rodante, cánones por surco, personal) son muy elevados, mientras que el coste marginal de transportar a un pasajero adicional es prácticamente nulo. Por ello asumiremos $\mathrm{CT} \approx \mathrm{CF} \Rightarrow \mathrm{CMa} \approx 0$.
 
-:::{#firstcol}
-   En términos de demanda distinguimos dos situaciones: la previa a la liberalización, en la que la demanda viene dada únicamente por Renfe (monopolio bilateral) ($D_1$), y la posterior con la entrada de nuevas operadoras que provoca un desplazamiento hacia la derecha de la demanda ($D_2$) (ver @fig-mercado-surcos).
-:::
-
-:::{#secondcol}
+Por otra parte, el mercado de pasajeros se caracteriza por un bien aparentemente homogéneo, pero con diferenciación en calidad del servicio y en los horarios. El mercado antes de la liberalización operaba como un monopolio: la demanda se corresponde con los pasajeros, mientras que la cantidad ofrecida por el monopolista viene dada por $O_1$. Tras la entrada de nuevas empresas, el mercado pasa a presentar una estructura oligopolística. La oferta depende de la cantidad de equilibrio en el mercado de surcos; la liberalización la incrementa, desplazando la oferta hacia la derecha ($O_2$). El desplazamiento hacia la derecha implica un aumento en la cantidad de equilibrio del mercado de pasajeros y una reducción del precio (ver @fig-mercados-2). [@pindy]
 
 ```{r}
-#| label: fig-mercado-surcos
-#| fig-cap: "Mercado de surcos."
+#| label: fig-mercados
+#| fig-cap: "Modelo del mercado ferroviario."
+#| fig-subcap:
+#|   - "Mercado de surcos"
+#|   - "Mercado de pasajeros"
+#| layout-ncol: 2
 #| fig-width: 7
-#| fig-height: 3
-#| out-width: "80%"
-#| fig-align: center
-
+#| fig-height: 3.6
+#| out-width: "100%"
 ggplot() +
   geom_hline(yintercept = 7, colour = "grey50", linewidth = 1) +
   annotate("text", x = 0, y = 7, label = "paste(P[fijo], ' = ', P[E], ' = ', P[E[0]])", parse = TRUE, hjust = 1.05, size = 5) +
@@ -109,7 +107,58 @@ annotate("text", x = 7, y = 7, label = "E", hjust = -0.5, vjust = -0.5, size = 5
   coord_cartesian(clip = "off") +
   theme_classic() +
   theme(
-    plot.margin = margin(0, 25, 20, 140),
+    aspect.ratio = 0.7,
+    plot.margin = margin(20, 25, 20, 90),
+    axis.line = element_line(arrow = arrow(length = unit(0.3, "cm")), linewidth = 1.5),
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title.x = element_text(hjust = 1, size = 14),
+    axis.title.y = element_text(hjust = 1, angle = 0, vjust = 1, size = 14)
+  )
+
+ggplot() +
+  geom_segment(aes(x = 0, y = 8, xend = 10, yend = 2),
+               colour = "#E60028", linewidth = 1) +
+  annotate("text", x = 10, y = 2, label = "D", parse = TRUE,
+           colour = "#E60028", hjust = -0.5, vjust = 0.5, size = 5) +
+  geom_segment(aes(x = 1, y = 1, xend = 5, yend = 10),
+               colour = "#6A0DAD", linewidth = 1) +
+  annotate("text", x = 5, y = 10, label = "O[1]", parse = TRUE,
+           colour = "#6A0DAD", hjust = 1.3, vjust = -0.3, size = 5) +
+  geom_segment(aes(x = 4, y = 1, xend = 8, yend = 10),
+               colour = "blue", linewidth = 1) +
+  annotate("text", x = 8, y = 10, label = "O[2]", parse = TRUE,
+           colour = "blue", hjust = 1.3, vjust = -0.3, size = 5) +
+  annotate("point", x = 3.25, y = 6.05, size = 3) +
+  annotate("text", x = 3.25, y = 6.05, label = "E[1]", parse = TRUE,
+           hjust = -0.3, vjust = -0.5, size = 5) +
+  annotate("point", x = 5.61, y = 4.63, size = 3) +
+  annotate("text", x = 5.61, y = 4.63, label = "E[2]", parse = TRUE,
+           hjust = -0.3, vjust = -0.5, size = 5) +
+  geom_segment(aes(x = 3.25, y = 6.05, xend = 0, yend = 6.05),
+               colour = "grey50", linetype = "dashed", linewidth = 0.4) +
+  geom_segment(aes(x = 3.25, y = 6.05, xend = 3.25, yend = 0),
+               colour = "grey50", linetype = "dashed", linewidth = 0.4) +
+  geom_segment(aes(x = 5.61, y = 4.63, xend = 0, yend = 4.63),
+               colour = "grey50", linetype = "dashed", linewidth = 0.4) +
+  geom_segment(aes(x = 5.61, y = 4.63, xend = 5.61, yend = 0),
+               colour = "grey50", linetype = "dashed", linewidth = 0.4) +
+  annotate("text", x = 0, y = 6.05, label = "P[1]", parse = TRUE, hjust = 1.2, size = 5) +
+  annotate("text", x = 0, y = 4.63, label = "P[2]", parse = TRUE, hjust = 1.2, size = 5) +
+  annotate("text", x = 3.25, y = 0, label = "Q[1]", parse = TRUE, vjust = 1.5, size = 5) +
+  annotate("text", x = 5.61, y = 0, label = "Q[2]", parse = TRUE, vjust = 1.5, size = 5) +
+  geom_segment(aes(x = 2.5, y = 9, xend = 5.5, yend = 9),
+               arrow = arrow(length = unit(0.3, "cm")),
+               colour = "grey30", linewidth = 0.6) +
+  annotate("text", x = 4, y = 9.4, label = "Liberalización",
+           size = 4.5, colour = "grey20") +
+  scale_x_continuous(limits = c(0, 10), expand = c(0, 0), name = "Q") +
+  scale_y_continuous(limits = c(0, 10), expand = c(0, 0), name = "P") +
+  coord_cartesian(clip = "off") +
+  theme_classic() +
+  theme(
+    aspect.ratio = 0.7,
+    plot.margin = margin(20, 25, 20, 90),
     axis.line = element_line(arrow = arrow(length = unit(0.3, "cm")), linewidth = 1.5),
     axis.text = element_blank(),
     axis.ticks = element_blank(),
@@ -118,83 +167,153 @@ annotate("text", x = 7, y = 7, label = "E", hjust = -0.5, vjust = -0.5, size = 5
   )
 ```
 
-:::
+### Evolución de la oferta
 
-::::
+A continuación, vamos a analizar cómo ha variado la oferta de plazas en el mercado de pasajeros tras la liberalización de la red. La @fig-plazas muestra la evolución trimestral de las plazas ofertadas a partir de 2018. Las tres líneas de colores representan el número de plazas ofrecidas por cada operadora, mientras que la línea punteada muestra el agregado. Durante el periodo de monopolio, Renfe ofrecía la totalidad de las plazas, por lo que coincide con la línea agregada.
 
-### Evolución de la demanda
+A partir de la liberalización y la transición hacia un oligopolio, aparecen nuevas operadoras que, al incorporarse, no provocan una reducción en las plazas ofertadas por Renfe (que, ignorando los efectos de la pandemia del COVID-19, se han mantenido prácticamente constantes). El hecho de que la oferta de Renfe no disminuya indica que las nuevas operadoras están utilizando surcos ferroviarios previamente no explotados. Esto es coherente con el modelo teórico de la @fig-mercados: el desplazamiento a la derecha de la demanda en el mercado de surcos y de la oferta en el de pasajeros.
+
+Analizando el desglose por corredores (ver @fig-plazas-corredor), se observa que, tras la incorporación de *OUIGO* e *iryo*, la oferta total de plazas varía muy poco en el tiempo. Esta estabilidad sugiere que el mercado se aproxima a la capacidad máxima disponible ($Q_\text{max}$). No obstante, este resultado también podría explicarse por otros factores, como posibles restricciones en el material rodante de las nuevas operadoras.
 
 
 ```{r}
+#| label: fig-plazas
+#| fig-cap: "Plazas ofertadas en AV por operadora. Elaboración propia en R con datos de CNMC (2026)."
+#| fig-width: 7
+#| fig-height: 1.7
+#| out-width: "100%"
+#| fig-align: center
 filtered_data_train |>
   group_by(empresa, fecha) |>
   summarise(
-    plazas_ofertadas = sum(plazas_ofertadas)
+    plazas_ofertadas = sum(plazas_ofertadas),
+    .groups = "drop"
   ) |>
   ggplot(
     aes(x = fecha, y = plazas_ofertadas, colour = empresa)
   ) +
-  geom_line(linewidth = 1) +
+  geom_line(linewidth = 0.8) +
   geom_line(
     data = filtered_data_train |>
       group_by(fecha) |>
-      summarise(plazas_ofertadas = sum(plazas_ofertadas)),
+      summarise(plazas_ofertadas = sum(plazas_ofertadas), .groups = "drop"),
     aes(x = fecha, y = plazas_ofertadas, linetype = "Total"),
     inherit.aes = FALSE,
-    linewidth = 1,
+    linewidth = 0.8,
     colour = "black"
   ) +
+  geom_vline(xintercept = as.numeric(as.Date("2021-01-01")),
+             linetype = "dotted", colour = "grey30", linewidth = 0.6) +
+  annotate("text", x = as.Date("2021-05-10"), y = Inf,
+           label = "Liberalización de la red", hjust = -0.05, vjust = 1.5,
+           size = 3, colour = "grey20") +
   scale_linetype_manual(name = NULL, values = c(Total = "dashed")) +
   scale_y_continuous(labels = scales::label_number(big.mark = ".", decimal.mark = ",")) +
   scale_colour_manual(values = c(Renfe = "#4B286D", iryo = "#E60028", OUIGO = "#009FE3")) +
   labs(
-    title = "Evolución de las plazas ofertadas por corredor",
-    x = "Fecha",
+    title = "Evolución de las plazas ofertadas en alta velocidad",
+    x = NULL,
     y = "Plazas ofertadas",
-    colour = "Empresa"
+    colour = NULL
   ) +
-  theme_minimal()
+  theme_bw(base_size = 10) +
+  theme(
+    panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.6),
+    axis.ticks = element_line(colour = "black", linewidth = 0.4),
+    legend.position = "bottom",
+    legend.box = "horizontal",
+    legend.margin = margin(0, 0, 0, 0),
+    plot.margin = margin(2, 6, 2, 2)
+  )
 ```
 
----
-
-https://www.cope.es/emisoras/comunidad-valenciana/valencia-provincia/valencia/noticias/iryo-primer-operador-privado-espanol-alta-velocidad-20211118_1627762
+### Concentración de la oferta 
 
 
-## Trabajo restante
+La concentración es el grado en el que la producción de un mercado está controlada por un número reducido de empresas. Los oligopolios se caracterizan por presentar un elevado grado de concentración. Para cuantificarla, puede utilizarse el índice de Herfindahl-Hirschman (HHI), que se calcula como la suma de los cuadrados de las cuotas de mercado de las empresas que conforman la oferta; un HHI superior a 2.500 indica un mercado altamente concentrado.
 
-- 2. DESARROLLO
-  - 2.1 Estructura del mercado y barreras de entrada:(operadores principales, oligopolio, Adif, barreras: infraestructura, inversión, regulación)
-  - 2.2 Evolución de la demanda:(pasajeros, crecimiento tras liberalización, datos INE, gráfico en R)
-  - 2.3 Grado de concentración del mercado  (cuotas de mercado, índice HHI, cálculo en R, interpretación)
-  - 2.4 Comportamiento estratégico de las empresas (competencia en precios - Bertrand)
-  - 2.5 Poder de mercado - (precios - ¿Renfe como empresa privilegiada dentro del oligopolio?)
+La @fig-hhi muestra la evolución del HHI. Antes de la liberalización, en el mercado monopolista, *Renfe* concentra la totalidad de la producción, por lo que el índice alcanza su valor máximo, $\mathrm{HHI}=10.000$. Tras la transición a un oligopolio, la concentración se reduce, situándose en torno a $\mathrm{HHI} \approx 8.000$ con la entrada de *OUIGO* y en $\mathrm{HHI} \approx 4.500$ con la incorporación de *iryo*. A pesar de esta reducción, los valores del HHI siguen indicando un elevado grado de concentración, lo que confirma el carácter oligopolístico del mercado. [@wikiHHI]
 
-- 3. DISCUSIÓN Y CONCLUSIONES
+```{r}
+#| label: fig-hhi
+#| fig-cap: "Evolución del HHI en el mercado de AV. Elaboración propia en R con datos de CNMC (2026)."
+#| fig-width: 7
+#| fig-height: 1.3
+#| out-width: "100%"
+#| fig-align: center
+filtered_data_train |>
+  group_by(fecha, empresa) |>
+  summarise(plazas = sum(plazas_ofertadas, na.rm = TRUE), .groups = "drop") |>
+  group_by(fecha) |>
+  mutate(cuota = 100 * plazas / sum(plazas)) |>
+  summarise(HHI = sum(cuota^2), .groups = "drop") |>
+  ggplot(aes(x = fecha, y = HHI)) +
+  geom_line(linewidth = 0.8, colour = "#4B286D") +
+  geom_hline(yintercept = c(2500), linetype = "dotted", colour = "grey50") +
+  annotate("text", x = as.Date("2018-01-01"), y = 2500,
+           label = "Mercado concentrado", hjust = 0, vjust = -0.4,
+           size = 3, colour = "grey30") +
+  geom_vline(xintercept = as.numeric(as.Date("2021-05-10")),
+             linetype = "dotted", colour = "grey30", linewidth = 0.6) +
+  annotate("text", x = as.Date("2021-05-10"), y = Inf,
+           label = "Liberalización de la red", hjust = -0.05, vjust = 1.5,
+           size = 3, colour = "grey20") +
+  scale_y_continuous(limits = c(0, 10000),
+                     labels = scales::label_number(big.mark = ".", decimal.mark = ",")) +
+  labs(
+    title = "Concentración del mercado de alta velocidad",
+    x = NULL,
+    y = "HHI"
+  ) +
+  theme_bw(base_size = 10) +
+  theme(
+    panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.6),
+    axis.ticks = element_line(colour = "black", linewidth = 0.4),
+    plot.margin = margin(2, 6, 2, 2)
+  )
+```
+
+### Modelo de oligopolio
+
+El mercado oligopolístico de transporte de pasajeros podemos modelizarlo siguiendo el modelo de Bertrand con productos diferenciados. Este se basa en la competencia en precios; es decir, las empresas pueden fijar el precio del billete. Una operadora, al disminuir el precio del billete mediante descuentos o bajadas generalizadas, trata de captar clientes de las otras operadoras [@pindy].
+
+La diferenciación entre los servicios de las operadoras persigue el mismo objetivo; por ejemplo, los billetes de *iryo* son más caros, pero ofrecen mayor comodidad y *elegancia* [@garciaIndependiente2023]. De este modo, la diferenciación suaviza la competencia en precios y evita que estos se reduzcan hasta niveles cercanos al coste marginal, como ocurriría en un modelo de Bertrand con producto homogéneo [@coloma2009bertrand].
+
+En relación con la cantidad ofrecida por cada empresa, recordemos que está limitada por el mercado de surcos ferroviarios. Esta restricción impide que una operadora pueda atender a toda la demanda incluso reduciendo los precios, lo que limita la competencia y refuerza la capacidad de las empresas para mantener márgenes positivos. 
+
+Sin embargo, el modelo de Bertrand no se ajusta perfectamente al mercado de pasajeros por varios motivos, siendo los más destacables la existencia del mercado de surcos ferroviarios, que limita la oferta, y la estructura particular de costes del sector ferroviario, con costes fijos muy elevados y coste marginal casi nulo. Asimismo, cabe mencionar que el modelo asume que las empresas son de tamaño similar, mientras que *Renfe* es considerablemente más grande que las otras operadoras (ver @fig-plazas).
+
+## Discusiones y Conclusiones
+
+La liberalización de la red de alta velocidad ferroviaria ha provocado la transformación del mercado de pasajeros. El monopolio del mercado ferroviario, del cual *RENFE* era beneficiaria, ha sido reemplazado por una compleja estructura vertical de dos mercados: un monopolio para la gestión de las vías y un oligopolio tras la entrada de las operadoras *OUIGO* e *iryo* en el mercado de la venta de billetes.
+
+El oligopolio del mercado de billetes se caracteriza por tener un elevado grado de concentración y grandes barreras de entrada relativas a la legislación, el mercado de surcos ferroviarios y la alta inversión fija requerida. Asimismo, el oligopolio se aproxima al modelo de Bertrand adaptado a productos no homogéneos; este modelo se basa en la competencia en precios y, como la oferta máxima de cada empresa está limitada por el mercado de surcos, las operadoras tratan de atraer a los clientes mediante la reducción de sus tarifas, lo que implica una presión a la baja sobre los precios y un aumento del excedente del consumidor [@pindy].
+
+Por último, es importante destacar que, dentro del oligopolio, la operadora *Renfe*, al tener un tamaño significativamente superior al de la competencia, dispone de un mayor poder de mercado y de mayor capacidad para influir sobre la competencia. Esta asimetría puede otorgar a *Renfe* la capacidad de fijar la mayor parte de los precios del mercado. Esta situación puede dar pie a que la operadora aplique prácticas anticompetitivas (como la colusión o la competencia desleal), perjudiciales para el consumidor. En este contexto resulta especialmente relevante el papel de control que ejerce la *CNMC*.
 
 
-- 4. REFERENCIAS BIBLIOGRÁFICAS  
-  (INE, CNMC, informes sectoriales, manual de microeconomía)
 
-## Otras cuestiones
+## Uso de la inteligencia artificial
 
-¿Cómo cito en el texto y cuando? Preguntar por: Leyes, história...
+Para la realización del trabajo se han utilizado dos *chatbots* de IA: *ClaudeAI*, únicamente para obtener ayuda en la elaboración de las gráficas con *R*, y *ChatGPT*. Este último se ha utilizado principalmente para 3 funciones:
 
-## Fuentes
+1. Búsqueda de información sobre algunos temas.
+2. Corrección de faltas ortográficas y mejora de la expresión escrita (evitar repeticiones, uso de la impersonal...).
+3. Como asistente en la redacción de algunos párrafos para aportar claridad al texto.
 
-*falta citar e incluir las referencias en el texto*
 
-- https://www.transportes.gob.es/el-ministerio/campanas-de-publicidad/2021-anio-europeo-del-ferrocarril/conociendo-el-ferrocarril/12-hitos
-- https://www.boe.es/diario_boe/txt.php?id=BOE-A-2006-16636
-- https://www.boe.es/buscar/doc.php?id=DOUE-L-1991-81196
-- https://www.canalsur.es/noticias/andalucia/la-red-de-alta-velocidad-espanola-la-mas-extensa-de-europa-con-4000-kilometros/2236223.html?utm_source=chatgpt.com
-
-\newpage
 
 ## Bibliografía {.unnumbered}
 
+\begingroup
+\scriptsize
+\setlength{\parskip}{0pt}
+\linespread{0.8}\selectfont
+
 ::: {#refs}
 :::
+
+\endgroup
 
 
 ## Anexo I {.unnumbered}
@@ -202,10 +321,11 @@ https://www.cope.es/emisoras/comunidad-valenciana/valencia-provincia/valencia/no
 ```{r}
 #| label: fig-plazas-corredor
 #| fig-cap: "Evolución de las plazas ofertadas por empresa y corredor."
-#| fig-width: 8
-#| fig-height: 10
-#| out-width: "100%"
+#| fig-width: 7
+#| fig-height: 8
+#| out-width: "90%"
 #| fig-align: center
+#| fig-pos: "H"
 
 filtered_data_train |>
   group_by(empresa, corredor, fecha) |>
@@ -234,5 +354,9 @@ filtered_data_train |>
     y = "Plazas ofertadas",
     colour = "Empresa"
   ) +
-  theme_minimal()
+  theme_bw() +
+  theme(
+    panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.6),
+    axis.ticks = element_line(colour = "black", linewidth = 0.4)
+  )
 ```
