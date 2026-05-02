@@ -10,6 +10,7 @@ format:
 
   pdf:
     papersize: a4
+    fig-cap-location: top
     toc: true
     number-sections: true
     colorlinks: false

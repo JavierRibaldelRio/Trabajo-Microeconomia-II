@@ -3,8 +3,13 @@
 % ============================================================
 
 \usepackage{graphicx}
+\usepackage{fontawesome6}
+\AtBeginDocument{%
+  \let\oldmaketitle\maketitle
+  \renewcommand{\maketitle}{\oldmaketitle\begin{center}\resizebox{!}{2cm}{\faTrainTram}\end{center}\vspace{1em}}%
+}
 \usepackage{geometry}
-\geometry{top=1.8cm,bottom=1.8cm,includeheadfoot}
+\geometry{top=1.8cm,bottom=1.8cm,left=2.15cm,right=2.15cm,includeheadfoot}
 \usepackage{wrapfig}
 \usepackage{float}
 \usepackage{fancyhdr}
